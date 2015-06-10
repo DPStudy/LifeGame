@@ -20,3 +20,43 @@
 
 디자인 패턴 학습을 위해 과하게 사용할 예정
 
+* Abstract Factory
+ * Pass!
+* Builder
+ * Cell 생성에 사용
+  * Director : Main class
+  * Builder : Cell
+  * Concrete Builder : NormalCell (...?)
+  * Product : Cell
+* Factory Method
+ * Board 내에서 Drawer 생성에 사용
+  * Creator : Board
+  * Concrete Creator : NormalBoard
+  * Product : Drawer
+  * Concrete Product : ConsoleDrawer
+* Prototype
+ * Pass!
+* Singleton
+ * 사용자의 입력을 처리할 클래스를 하나만 유지하기 위한 용도로 사용
+  * Singleton : User
+* Adapter
+* Bridge
+* Composite
+* Decorator
+* Facade
+* Flyweight
+* Proxy
+* Chain of Responsibility
+* Command
+* Interpreter
+* Iterator
+* Mediator
+* Memento
+* Observer
+ * Timer 에서 사용
+* State
+* Strategy
+* Template Method
+* Visitor
+
+
