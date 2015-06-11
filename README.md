@@ -40,23 +40,57 @@
  * 사용자의 입력을 처리할 클래스를 하나만 유지하기 위한 용도로 사용
   * Singleton : User
 * Adapter
+ * Pass!
 * Bridge
+ * Pass!
 * Composite
+ * Board 가 Drawing할 때 Cell의 Drawing도 호출할 때 사용
+  * Component : DrawUser (...)
+  * Composite : NormalBoard
+  * Leaf : NormalCell
 * Decorator
+ * Pass!
 * Facade
+ * Console 화면 출력에 필요한 명령어를 숨김
+  * Facade : ConsoleDrawer
+  * Subsytem Classes : Java console output classes
+ * User 사용자의 입력을 받는 명령어를 숨김
+  * Facade : User
+  * Subsystem Classes : Java console input classes
 * Flyweight
+ * Pass!
 * Proxy
+ * Pass!
 * Chain of Responsibility
+ * Pass!
 * Command
+ * Pass!
 * Interpreter
+ * Pass!
 * Iterator
+ * java의 Collection Iterator를 사용할꺼예요
 * Mediator
+ * Cell이 다른 Cell들과 통신을 하기 위한 용도
+  * Mediator : 생략
+  * Concrete Mediator : CellMediator
+  * Colleagues : NormalCell Objects
 * Memento
+ * Pass!
 * Observer
  * Timer 에서 사용
+  * Subject : Timer
+  * Observer : Observer
+  * Participant : Board
 * State
+ * Cell의 상태에 따라에 따라 동작을 구분
+  * Context : Board
+  * State : Cell
+  * Concreate State : NormalCellState (? 두개 만들어야겠네..)
 * Strategy
+ * Pass!
 * Template Method
+ * Pass!
 * Visitor
+ * Pass!
 
 
