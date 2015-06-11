@@ -10,6 +10,8 @@ public class Timer {
     }
 
     void run() {
-
+        for(Observer observer : observers) {
+            observer.tick();
+        }
     }
 }
