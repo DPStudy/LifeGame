@@ -1,6 +1,6 @@
 package lifegame;
 
-public interface Cell {
+public interface Cell extends DrawUser {
     void next();
     void update();
 }
