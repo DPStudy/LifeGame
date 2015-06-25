@@ -1,22 +1,34 @@
 package lifegame;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Timer implements Runnable {
-    private List<Observer> observers = new ArrayList<Observer>();
+    private Set<Observer> observers = new HashSet<Observer>();
     private int delaySecond;
+
+    public Timer(int delaySecond) {
+        this.delaySecond = delaySecond;
+    }
 
     public void setDelaySecond(int delaySecond) {
         this.delaySecond = delaySecond;
     }
 
     public void registerObserver(Observer observer) {
+        if (observer == null) {
+            throw new IllegalArgumentException();
+        }
+
         observers.add(observer);
     }
 
     public void removeObserver(Observer observer) {
+        if (observer == null) {
+            throw new IllegalArgumentException();
+        }
+
         observers.remove(observer);
     }
 
