@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Timer implements Runnable {
-    private Set<Observer> observers = new HashSet<Observer>();
+    private final Set<Observer> observers = new HashSet<Observer>();
     private int delaySecond;
 
     public Timer(int delaySecond) {
