@@ -17,7 +17,10 @@ public abstract class AbstractBoard implements Board {
 
     @Override
     public void addCell(int x, int y) {
+        if(y < 0 || y >= cells.length) return;
+        if(x < 0 || x >= cells[y].length) return;
 
+        cells[y][x].alive();
     }
 
     @Override
