@@ -24,11 +24,11 @@ public abstract class AbstractBoard implements Board {
     }
 
     @Override
-    public void Draw(Drawer drawer) {
+    public void draw(Drawer drawer) {
         drawer.drawBoard(HEIGHT, WIDTH);
         for(Cell[] cellRow : cells) {
             for(Cell cell : cellRow) {
-                cell.Draw(drawer);
+                cell.draw(drawer);
             }
         }
     }
@@ -45,7 +45,7 @@ public abstract class AbstractBoard implements Board {
                 cell.update();
             }
         }
-        this.Draw(getDraw());
+        this.draw(getDraw());
     }
 
     abstract public Drawer getDraw();
