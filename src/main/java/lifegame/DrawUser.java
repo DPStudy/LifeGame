@@ -1,5 +1,5 @@
 package lifegame;
 
 public interface DrawUser {
-    void Draw(Drawer drawer);
+    void draw(Drawer drawer);
 }
