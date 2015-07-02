@@ -18,6 +18,7 @@ public class NormalCell implements Cell {
 
         this.mediator = mediator;
         cellState = CellState.EMPTY;
+        nextState = CellState.EMPTY;
     }
 
     @Override
