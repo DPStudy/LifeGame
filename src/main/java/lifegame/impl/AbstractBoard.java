@@ -18,7 +18,6 @@ public abstract class AbstractBoard implements Board, Mediator {
         for (int yIndex = 0; yIndex < HEIGHT; yIndex++) {
             for (int xIndex = 0; xIndex < WIDTH; xIndex++) {
                 cells[yIndex][xIndex] = new NormalCell(this, xIndex, yIndex);
-                if(Math.random() * 100 < 35) cells[yIndex][xIndex].alive();
             }
         }
     }

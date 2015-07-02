@@ -17,8 +17,8 @@ public class NormalCell implements Cell {
         this.y = y;
 
         this.mediator = mediator;
-        cellState = CellState.EMPTY;
-        nextState = CellState.EMPTY;
+        cellState = Math.random()*100 < 30 ? CellState.ALIVE : CellState.EMPTY;
+        nextState = cellState;
     }
 
     @Override
