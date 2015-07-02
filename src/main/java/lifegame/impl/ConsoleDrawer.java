@@ -27,6 +27,7 @@ public class ConsoleDrawer implements Drawer{
     int prevDrawy = -1;
     private void drawNewline(int y) {
         if(prevDrawy != y) {
+            if(y == 0) System.out.println();
             System.out.println();
             prevDrawy = y;
         }
