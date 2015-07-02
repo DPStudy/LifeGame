@@ -17,7 +17,7 @@ public abstract class AbstractBoard implements Board, Mediator {
 
         for (int yIndex = 0; yIndex < HEIGHT; yIndex++) {
             for (int xIndex = 0; xIndex < WIDTH; xIndex++) {
-                cells[yIndex][xIndex] = new NormalCell(this, xIndex, yIndex);
+                new NormalCell(this, xIndex, yIndex);
             }
         }
     }
@@ -62,6 +62,11 @@ public abstract class AbstractBoard implements Board, Mediator {
         if(neighborAliveCount == 2) cell.keep();
         else if(neighborAliveCount == 3) cell.alive();
         else cell.empty();
+    }
+
+    @Override
+    public void registerCell(int x, int y, Cell cell) {
+        cells[y][x] = cell;
     }
 
     private int countAliveNeighbor(Cell cell) {
