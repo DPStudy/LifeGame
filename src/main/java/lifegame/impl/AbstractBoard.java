@@ -9,10 +9,16 @@ public abstract class AbstractBoard implements Board {
     final private int HEIGHT;
     final private int WIDTH;
 
-    public AbstractBoard(int x, int y) {
-        WIDTH = x;
-        HEIGHT = y;
+    public AbstractBoard(int width, int height) {
+        WIDTH = width;
+        HEIGHT = height;
         cells = new Cell[HEIGHT][WIDTH];
+
+        for (int yIndex = 0; yIndex < HEIGHT; yIndex++) {
+            for (int xIndex = 0; xIndex < WIDTH; xIndex++) {
+                cells[yIndex][xIndex] = new NormalCell(yIndex, xIndex);
+            }
+        }
     }
 
     @Override

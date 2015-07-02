@@ -4,4 +4,5 @@ public interface Cell extends DrawUser {
     void next();
     void update();
     void alive();
+    boolean isAlive();
 }
