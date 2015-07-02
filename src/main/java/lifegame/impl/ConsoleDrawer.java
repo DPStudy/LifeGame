@@ -14,12 +14,22 @@ public class ConsoleDrawer implements Drawer{
     // drawAliveCell와 darwEmptyCell은 순서에 맞추어 출력이 된다고 가정을 합니다.
     @Override
     public void drawAliveCell(int x, int y) {
+        drawNewline(y);
         System.out.print('X');
     }
 
     @Override
     public void drawEmptyCell(int x, int y) {
+        drawNewline(y);
         System.out.print('_');
+    }
+
+    int prevDrawy = -1;
+    private void drawNewline(int y) {
+        if(prevDrawy != y) {
+            System.out.println();
+            prevDrawy = y;
+        }
     }
 }
 
