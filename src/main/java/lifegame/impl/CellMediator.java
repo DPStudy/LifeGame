@@ -32,7 +32,7 @@ public class CellMediator {
         // 주변이 셀을 조회한다(주변의 셀은 기존위치에서 가로 세로 좌표 -1에서 +1 내의 값이다.
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                if (i != j) {
+                if (i != 0 && j != 0) {
                     Position nearPosition = new Position(x + i, y + j);
                     if (positionToCell.containsKey(nearPosition) && positionToCell.get(nearPosition).isAlive())
                         aliveCount++;
