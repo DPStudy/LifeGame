@@ -33,14 +33,16 @@ public class Timer implements Runnable {
     }
 
     public void run() {
-        for (Observer observer : observers) {
-            observer.tick();
+        while (true) {
+            for (Observer observer : observers) {
+                observer.tick();
+            }
             try {
                 TimeUnit.SECONDS.sleep(delaySecond);
             } catch (InterruptedException e) {
-                // TODO - 로그 출력방법
                 e.printStackTrace();
             }
         }
+
     }
 }
