@@ -43,6 +43,8 @@ public abstract class AbstractBoard implements Board, Mediator {
 
     @Override
     public void tick() {
+        this.draw(getDraw());
+
         for(Cell[] cellRow : cells) {
             for(Cell cell : cellRow) {
                 cell.next();
@@ -53,7 +55,6 @@ public abstract class AbstractBoard implements Board, Mediator {
                 cell.update();
             }
         }
-        this.draw(getDraw());
     }
 
     @Override
