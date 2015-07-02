@@ -43,7 +43,10 @@ public class CellMediator {
     }
 
     public void addCell(int x, int y, Cell cell) {
-        positionToCell.put(new Position(x, y), cell);
+        Position thisPosition = new Position(x, y);
+        
+        positionToCell.put(thisPosition, cell);
+        cellToPosition.put(cell, thisPosition);
     }
 
     public static void main(String[] args) {
