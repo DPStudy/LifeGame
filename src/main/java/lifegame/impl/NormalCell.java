@@ -3,30 +3,36 @@ package lifegame.impl;
 import lifegame.Cell;
 import lifegame.CellState;
 import lifegame.Drawer;
+import lifegame.Mediator;
 
 public class NormalCell implements Cell {
-    private CellMediator cellMediator;
     private CellState cellState;
     private CellState nextState;
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
+    private final Mediator mediator;
 
-    public NormalCell(int x, int y) {
+    public NormalCell(Mediator mediator, int x, int y) {
         this.x = x;
         this.y = y;
-        cellState = EmptyCellState.getInstance();
-        cellMediator = CellMediator.getInstance();
-        cellMediator.addCell(x, y, this);
+
+        this.mediator = mediator;
+        cellState = CellState.EMPTY;
+    }
+
+    @Override
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public int getY() {
+        return y;
     }
 
     @Override
     public void next() {
-        int neighborCount = cellMediator.countNeighbor(this);
-        if (neighborCount >= 3) {
-            nextState = AliveCellState.getInstance();
-        } else {
-            nextState = EmptyCellState.getInstance();
-        }
+        mediator.setNextCellState(this);
     }
 
     @Override
@@ -36,20 +42,26 @@ public class NormalCell implements Cell {
 
     @Override
     public void alive() {
-        cellState = AliveCellState.getInstance();
+        cellState = CellState.ALIVE;
+    }
+
+    @Override
+    public void empty() {
+        nextState = CellState.EMPTY;
+    }
+
+    @Override
+    public void keep() {
+        nextState = cellState;
     }
 
     @Override
     public boolean isAlive() {
-        return cellState == AliveCellState.getInstance();
+        return cellState == CellState.ALIVE;
     }
 
     @Override
     public void draw(Drawer drawer) {
-        if (cellState == EmptyCellState.getInstance()) {
-            drawer.drawEmptyCell(x, y);
-        } else if (cellState == AliveCellState.getInstance()){
-            drawer.drawAliveCell(x, y);
-        }
+        cellState.draw(drawer, this);
     }
 }

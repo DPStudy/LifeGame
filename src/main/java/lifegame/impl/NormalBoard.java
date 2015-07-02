@@ -1,6 +1,8 @@
 package lifegame.impl;
 
+import lifegame.Cell;
 import lifegame.Drawer;
+import lifegame.Mediator;
 
 public class NormalBoard extends AbstractBoard {
     private Drawer drawer = new ConsoleDrawer();

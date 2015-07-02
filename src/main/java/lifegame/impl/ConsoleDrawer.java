@@ -1,10 +1,5 @@
 package lifegame.impl;
 
-import jcurses.system.CharColor;
-import jcurses.widgets.DefaultLayoutManager;
-import jcurses.widgets.Label;
-import jcurses.widgets.WidgetsConstants;
-import jcurses.widgets.Window;
 import lifegame.Drawer;
 
 public class ConsoleDrawer implements Drawer{
