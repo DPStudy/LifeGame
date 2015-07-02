@@ -43,7 +43,7 @@ public class NormalCell implements Cell {
 
     @Override
     public void alive() {
-        cellState = CellState.ALIVE;
+        nextState = CellState.ALIVE;
     }
 
     @Override
